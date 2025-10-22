@@ -1,8 +1,8 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
 export const GET_EPISODES = gql`
-  query GetEpisodes($page: Int) {
-    episodes(page: $page) {
+  query getEpisodes($page: Int, $filter: FilterEpisode) {
+    episodes(page: $page, filter: $filter) {
       info {
         pages
         next
@@ -17,4 +17,4 @@ export const GET_EPISODES = gql`
       }
     }
   }
-`
+`;
